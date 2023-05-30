@@ -9,12 +9,13 @@
     android:background="@drawable/img"
     tools:context=".MainActivity">
 
-<TextView
+    <TextView
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
         android:drawableTop="@drawable/Logo"
         />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,16 +27,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:backgroundTint="@color/orange"
             android:layout_gravity="center_horizontal"
             android:padding="24dp"
-            android:background="@drawable/custom_edittext">
+            android:background="@color/orange">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:id="@+id/loginText"
+                android:text="Sign Up"
+                android:id="@+id/signUp"
                 android:textSize="60sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -44,13 +44,44 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/etUsername"
+                android:id="@+id/edtUserName"
                 android:background="@drawable/custom_edittext"
-                android:layout_marginTop="40dp"
-                android:padding="8dp"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
                 android:backgroundTint="@color/lightBlue"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                android:hint="Username"
+                android:padding="8dp"
+                android:hint="User Name"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/edtFullName"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/lightBlue"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:padding="8dp"
+                android:hint="Full Name"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/etEmail"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/lightBlue"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:padding="8dp"
+                android:hint="Email"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -70,25 +101,32 @@
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
 
-            <Button
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/black"
-                android:text="Login"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                android:layout_height="50dp"
+                android:id="@+id/etConfirmPassword"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/lightBlue"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:padding="8dp"
+                android:hint="Confirm Password"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"/>
 
             <Button
-                android:id="@+id/btnSignup"
+                android:id="@+id/signupBtn"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="75dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/black"
+
                 android:text="Sign Up"
                 android:textSize="18sp"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp" />>
 
         </LinearLayout>
 
