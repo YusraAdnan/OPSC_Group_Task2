@@ -13,9 +13,8 @@
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
-        android:drawableTop="@drawable/Logo"
+        android:drawableTop="@drawable/logo"
         />
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
