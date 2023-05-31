@@ -13,7 +13,7 @@
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_gravity="center_horizontal"
-        android:drawableTop="@drawable/Logo"
+
         />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -44,13 +44,13 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/etUsername"
+                android:id="@+id/etEmail"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
                 android:backgroundTint="@color/lightBlue"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                android:hint="Username"
+                android:hint="Email"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -71,6 +71,7 @@
                 android:drawablePadding="8dp"/>
 
             <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="30dp"
