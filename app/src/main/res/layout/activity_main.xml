@@ -46,7 +46,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/etUsername"
                 android:background="@drawable/custom_edittext"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:padding="8dp"
                 android:backgroundTint="@color/lightBlue"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
@@ -73,10 +73,11 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/black"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/lightorange"
                 android:text="Login"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 app:cornerRadius="20dp" />
 
             <Button
@@ -85,9 +86,10 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/lightorange"
                 android:text="Sign Up"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 app:cornerRadius="20dp" />
 
         </LinearLayout>
