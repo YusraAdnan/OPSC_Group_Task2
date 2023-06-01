@@ -1,12 +1,12 @@
-package com.OPSC_Group_Task2.opsc_group_task2
+package com.OPSC_Group_Task2.opsc_group_task2.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import com.OPSC_Group_Task2.opsc_group_task2.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         loginButton = findViewById(R.id.btnLogin)
-        etEmail = findViewById(R.id.etEmail)
+       etEmail= findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         signupButton = findViewById(R.id.btnSignup)
 

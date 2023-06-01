@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/orange"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <TextView
         android:layout_width="150dp"
@@ -15,6 +15,16 @@
         android:layout_gravity="center_horizontal"
         android:drawableTop="@drawable/logo"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Project"
+        android:id="@+id/addText"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -32,15 +42,6 @@
             android:padding="24dp"
             android:background="@drawable/custom_edittext">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Project"
-                android:id="@+id/addText"
-                android:textSize="40sp"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/darkblue"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -62,7 +63,7 @@
                 android:id="@+id/maxHours"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                 android:padding="8dp"
@@ -77,7 +78,7 @@
                 android:id="@+id/minHours"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="20dp"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                 android:padding="8dp"
@@ -85,17 +86,6 @@
                 android:drawableLeft="@drawable/baseline_access_time_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
-
-            <Button
-                android:id="@+id/btnAdd"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/darkblue"
-                android:text="Add Project"
-                android:textSize="18sp"
-                app:cornerRadius="20dp" />
 
         </LinearLayout>
 
