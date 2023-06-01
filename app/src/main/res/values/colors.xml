@@ -10,4 +10,8 @@
     <color name="lightBlue">#C6E9EE</color>
     <color name="orange">#F1BD8D</color>
     <color name="lightorange">#F1D7BF</color>
+    <color name="grey">#BCBEBF</color>
+    <color name="darkblue">#93ADCD</color>
+    <color name="darkorange">#F19B4B</color>
+    <color name="lorange">#F6C496</color>
 </resources>

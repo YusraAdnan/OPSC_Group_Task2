@@ -1,69 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#C6E9EE"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/orange"
+    tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@drawable/logo"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        app:cardBackgroundColor="#F1BD8D">
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/lightBlue">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EACDB2"
-            android:gravity="center"
-            android:text="Project name"
-            android:textColor="#020505"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:padding="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#EACDB2"
-            android:gravity="center"
-            android:text="Max hours"
-            android:textColor="#040A0B"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Project Infomation"
+                android:id="@+id/addText"
+                android:textSize="35dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/darkblue"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#EACDB2"
-            android:gravity="center"
-            android:text="Min hours"
-            android:textColor="#010202"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/mtitle"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:backgroundTint="@color/orange"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:hint="Project Name"
+                android:drawableLeft="@drawable/baseline_info_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:textSize="15dp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="#EACDB2"
-            android:gravity="center"
-            android:text="Additional Text"
-            android:textColor="#020304"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/maxHours"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/orange"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:padding="8dp"
+                android:hint="Maximum Hours"
+                android:drawableLeft="@drawable/baseline_access_time_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/minHours"
+                android:background="@drawable/custom_edittext"
+                android:layout_marginTop="20dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/orange"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:padding="8dp"
+                android:hint="Maximum Hours"
+                android:drawableLeft="@drawable/baseline_access_time_24"
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:textSize="15dp"/>
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/darkblue"
+                android:text="Back"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"/>
+
+            <Button
+                android:id="@+id/homeBtn"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="-60dp"
+                android:backgroundTint="@color/darkblue"
+                android:layout_gravity="right"
+                android:text="Home"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
