@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6C496">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_above="@id/titleTextView"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="-52dp"
+        android:contentDescription="Ivory Time Logo"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Timesheet"
+        android:textColor="#F1D7BF"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tRecycler"
+            android:layout_width="334dp"
+            android:layout_height="304dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#C6E9EE" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="-28dp"
+            android:layout_marginBottom="16dp"
+            android:background="#F19B4B"
+            app:backgroundTint="#F19B4B"
+            app:tint="#FFFFFF"
+            app:srcCompat="@drawable/baseline_add_24" />
+
+    </LinearLayout>
+
+</RelativeLayout>
