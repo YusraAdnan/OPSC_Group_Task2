@@ -13,7 +13,7 @@ class ProjectAdapter(val c: Context, val projectList:ArrayList<ProjectData>) : R
     var onItemClick: ((ProjectData) -> Unit)? = null
 
     inner class ProjectViewHolder(val v: View) : RecyclerView.ViewHolder(v) {
-        val projectName = v.findViewById<TextView>(R.id.mtitle)
+        val projectName = v.findViewById<TextView>(R.id.pTitle)
         val maxHours = v.findViewById<TextView>(R.id.maxHours)
         val minHours = v.findViewById<TextView>(R.id.minHours)
     }
