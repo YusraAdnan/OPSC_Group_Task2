@@ -9,13 +9,6 @@
     android:background="@color/orange"
     tools:context=".Activity.MainActivity">
 
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:drawableTop="@drawable/logo"
-        />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,17 +26,20 @@
             android:padding="24dp"
             android:background="@drawable/custom_edittext">
 
-            <TextView
+            <EditText
+                android:id="@+id/etEntryNo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Timesheet Name"
-                android:id="@+id/signUp"
-                android:textSize="40sp"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/darkblue"
-                />
-
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:backgroundTint="@color/orange"
+                android:drawableLeft="@drawable/baseline_calendar_month_24"
+                android:drawablePadding="8dp"
+                android:hint="Entry name:"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/black" />
             <EditText
                 android:id="@+id/etStartDate"
                 android:layout_width="match_parent"

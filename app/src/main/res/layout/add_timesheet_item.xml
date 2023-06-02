@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:text="Add Timesheet Entry"
-                android:id="@+id/signUp"
+
                 android:textSize="36sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
@@ -47,7 +47,7 @@
                 />
 
             <EditText
-                android:id="@+id/etTimesheetName"
+                android:id="@+id/etEntryName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -118,18 +118,6 @@
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black" />
-
-            <Button
-                android:id="@+id/btnNext"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="12dp"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/darkblue"
-                android:text="Next"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:cornerRadius="20dp"/>
 
         </LinearLayout>
 
