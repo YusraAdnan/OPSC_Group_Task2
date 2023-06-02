@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="#F1BD8D">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="243dp"
+        android:layout_height="132dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:contentDescription="IvoryTimeLogo"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="#C6E9EE"
+        android:orientation="vertical"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="@color/material_dynamic_neutral30"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="8dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="8dp"
+            android:text="Add Timesheet Entry"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColorHint="#F19B4B" />
+
+        <EditText
+            android:id="@+id/etEntryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#F1BD8D"
+            android:hint="Timesheet entry name:"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="#F6C496"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#F1BD8D"
+            android:hint="Start date"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="#F6C496"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#F1BD8D"
+            android:hint="Due date"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="#F6C496"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#F1BD8D"
+            android:hint="Description"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="#F6C496"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/roundstyle"
+            android:backgroundTint="#F1BD8D"
+            android:hint="Category"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="#F6C496"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="#F19B4B"
+            android:text="Next"
+            android:textColor="#FFFFFF"
+            app:background="@drawable/roundstyle" />
+
+    </LinearLayout>
+
+</RelativeLayout>
