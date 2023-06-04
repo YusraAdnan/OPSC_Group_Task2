@@ -1,8 +1,10 @@
 package com.OPSC_Group_Task2.opsc_group_task2.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -18,16 +20,27 @@ class TimesheetEntry : AppCompatActivity() {
     private lateinit var recv: RecyclerView
     private lateinit var timesheetList:ArrayList<TimesheetData>
     private lateinit var timesheetAdapter: TimesheetAdapter
+    private lateinit var backbutton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timesheet_entry)
         timesheetList = ArrayList()
         addsBtn =findViewById(R.id.addingTimesheetButton)
         recv = findViewById(R.id.tRecycler)
+        backbutton=findViewById(R.id.backBtn)
         timesheetAdapter = TimesheetAdapter(this, timesheetList)
         recv.layoutManager = LinearLayoutManager(this)
         recv.adapter = timesheetAdapter
         addsBtn.setOnClickListener{addTimesheetInfo()}
+
+        backbutton.setOnClickListener{
+            val vIntent = Intent(this, HomePageActivity:: class.java)
+           vIntent.addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY);
+
+            startActivity(vIntent)
+            finish();
+
+        }
     }
     private fun addTimesheetInfo() {
         val inflter = LayoutInflater.from(this)

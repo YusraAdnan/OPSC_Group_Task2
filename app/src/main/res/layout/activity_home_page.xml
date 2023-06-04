@@ -9,7 +9,7 @@
     android:background="@color/orange"
     tools:context=".Activity.MainActivity">
 
-<TextView
+    <TextView
         android:layout_width="150dp"
         android:layout_height="130dp"
         android:layout_marginTop="15dp"
