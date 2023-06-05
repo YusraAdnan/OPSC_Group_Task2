@@ -39,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
                 android:text="Timesheet Entry"
-
                 android:textAlignment="center"
                 android:textColor="@color/darkblue"
                 android:textSize="28sp"
