@@ -24,7 +24,25 @@ class TimesheetEntry : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timesheet_entry)
-        timesheetList = ArrayList()
+        setContentView(R.layout.activity_timesheet_entry)
+        val bundle: Bundle? = intent.extras
+
+        val msg = bundle!!.getString("key")
+
+        if (msg != null) {
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
+
+        HomePageActivity.timeSheets.timesheetlist2.forEach{
+            if(it.EntryName == msg)
+            {
+                TimesheetEntry.projecttimesheet.timesheetlist2.add(it)
+
+            }
+
+        }
+
+        timesheetList = TimesheetEntry.projecttimesheet.timesheetlist2
         addsBtn =findViewById(R.id.addingTimesheetButton)
         recv = findViewById(R.id.tRecycler)
         backbutton=findViewById(R.id.backBtn)
@@ -35,10 +53,7 @@ class TimesheetEntry : AppCompatActivity() {
 
         backbutton.setOnClickListener{
             val vIntent = Intent(this, HomePageActivity:: class.java)
-           vIntent.addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY);
-
-            startActivity(vIntent)
-            finish();
+            finish()
 
         }
     }
@@ -76,6 +91,15 @@ class TimesheetEntry : AppCompatActivity() {
                     "category: $category"
                 )
             )
+            HomePageActivity.timeSheets.timesheetlist2.add(
+                TimesheetData(
+                    "EntryName:$EntryName",
+                    "startDate: $startDate",
+                    "dueDate: $dueDate",
+                    "description: $description",
+                    "category: $category"
+                )
+            )
             timesheetAdapter.notifyDataSetChanged()
             Toast.makeText(this, "Timesheet entry added successfully", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
@@ -88,5 +112,8 @@ class TimesheetEntry : AppCompatActivity() {
         }
         addDialog.create()
         addDialog.show()
+    }
+    object projecttimesheet{
+        val timesheetlist2 = ArrayList<TimesheetData>()
     }
 }
