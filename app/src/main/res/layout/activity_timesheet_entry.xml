@@ -28,7 +28,7 @@
                 android:textColor="@color/darkorange"/>
     <TextView
         android:id="@+id/tvCategoryName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:text="Category:"
@@ -36,12 +36,24 @@
         android:textColor="@color/darkblue"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <TextView
-        android:id="@+id/tvTotalHours"
-        android:layout_width="match_parent"
+        android:id="@+id/dkf"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:text="Total Hours:"
+        android:textAlignment="center"
+        android:textColor="@color/darkblue"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotalHours"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="0"
         android:textAlignment="center"
         android:textColor="@color/darkblue"
         android:textSize="20sp"
