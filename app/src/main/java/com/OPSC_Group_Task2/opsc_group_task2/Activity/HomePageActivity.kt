@@ -44,11 +44,11 @@ class HomePageActivity : AppCompatActivity() {
         userAdapter.onItemClick ={
             val inflter = LayoutInflater.from(this)
             val v = inflter.inflate(R.layout.add_item, null)
-
+            v
             val projectName = v.findViewById<EditText>(R.id.projectName)
-
+            var projectname:String = projectName.toString()
             val intent = Intent(this, TimesheetEntry::class.java)
-            intent.putExtra("key",projectName.toString())
+            intent.putExtra("key",projectname)
             startActivity(intent)
         }
     }
