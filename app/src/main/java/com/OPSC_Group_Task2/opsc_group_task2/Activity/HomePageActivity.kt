@@ -12,6 +12,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.OPSC_Group_Task2.opsc_group_task2.Models.ProjectData
+import com.OPSC_Group_Task2.opsc_group_task2.Models.TimesheetData
 import com.OPSC_Group_Task2.opsc_group_task2.R
 import com.OPSC_Group_Task2.opsc_group_task2.Views.ProjectAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,15 +38,21 @@ class HomePageActivity : AppCompatActivity() {
         recv.layoutManager = LinearLayoutManager(this)
         recv.adapter = userAdapter
         addsBtn.setOnClickListener{addInfo()}
+
+
         //new code for intent
         userAdapter.onItemClick ={
+            val inflter = LayoutInflater.from(this)
+            val v = inflter.inflate(R.layout.add_item, null)
+
+            val projectName = v.findViewById<EditText>(R.id.projectName)
+
             val intent = Intent(this, TimesheetEntry::class.java)
-            intent.putExtra("newList",it)
+            intent.putExtra("key",projectName.toString())
             startActivity(intent)
-
         }
-
     }
+
     private fun addInfo() {
         val inflter = LayoutInflater.from(this)
         val v = inflter.inflate(R.layout.add_item, null)
@@ -62,7 +69,7 @@ class HomePageActivity : AppCompatActivity() {
                 applicationContext,
                 android.R.string.ok, Toast.LENGTH_SHORT
             ).show()
-          
+
             val names = projectName.text.toString()
             val max = maxHours.text.toString()
             val min = minHours.text.toString()
@@ -88,5 +95,12 @@ class HomePageActivity : AppCompatActivity() {
         addDialog.show()
     }
 
+    object timeSheets{
+        val timesheetlist2 = ArrayList<TimesheetData>()
+    }
+    object project{
+        var projectname:String = "aaa"
+
+    }
 
 }
