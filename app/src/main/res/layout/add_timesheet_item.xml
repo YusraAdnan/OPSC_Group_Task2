@@ -38,11 +38,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"
-                android:text="Add Timesheet Entry"
+                android:text="Timesheet Entry"
 
                 android:textAlignment="center"
                 android:textColor="@color/darkblue"
-                android:textSize="36sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <EditText
@@ -61,15 +61,15 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/etStartDate"
+                android:id="@+id/etStartDateTime"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:backgroundTint="@color/orange"
                 android:drawableLeft="@drawable/baseline_calendar_month_24"
                 android:drawablePadding="8dp"
-                android:hint="Start Date:"
+                android:hint="Start Date/Time:"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
@@ -78,14 +78,14 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/etDueDate"
+                android:id="@+id/etDuration"
                 android:background="@drawable/custom_edittext"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:inputType="text"
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:padding="8dp"
-                android:hint="Due Date:"
+                android:hint="Duration:"
                 android:drawableLeft="@drawable/baseline_calendar_month_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -94,7 +94,7 @@
                 android:id="@+id/etDescription"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:backgroundTint="@color/orange"
                 android:drawableLeft="@drawable/baseline_info_24"
@@ -108,7 +108,7 @@
                 android:id="@+id/etCategory"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/custom_edittext"
                 android:backgroundTint="@color/orange"
                 android:drawableLeft="@drawable/baseline_edit_note_24"
@@ -117,6 +117,8 @@
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black" />
+
+
 
         </LinearLayout>
 

@@ -6,8 +6,8 @@ import android.os.Parcelable
 data class TimesheetData(
 
     val EntryName:String,
-    val StartDate: String,
-    val DueDate: String,
+    val StartDateTime: String,
+    val Duration: String,
     val Description: String,
     val Category: String,
 ): Parcelable {
@@ -22,8 +22,8 @@ data class TimesheetData(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(EntryName)
-        parcel.writeString(StartDate)
-        parcel.writeString(DueDate)
+        parcel.writeString(StartDateTime)
+        parcel.writeString(Duration)
         parcel.writeString(Description)
         parcel.writeString(Category)
     }
@@ -41,4 +41,6 @@ data class TimesheetData(
             return arrayOfNulls(size)
         }
     }
+
+
 }

@@ -42,13 +42,9 @@ class HomePageActivity : AppCompatActivity() {
 
         //new code for intent
         userAdapter.onItemClick ={
-            val inflter = LayoutInflater.from(this)
-            val v = inflter.inflate(R.layout.add_item, null)
-            v
-            val projectName = v.findViewById<EditText>(R.id.projectName)
-            var projectname:String = projectName.toString()
+
             val intent = Intent(this, TimesheetEntry::class.java)
-            intent.putExtra("key",projectname)
+            intent.putExtra("key",HomePageActivity.project.projectname)
             startActivity(intent)
         }
     }
@@ -75,7 +71,7 @@ class HomePageActivity : AppCompatActivity() {
             val min = minHours.text.toString()
             projectList.add(
                 ProjectData(
-                    "Name:$names",
+                    "Category:$names",
                     "Maximum Hours: $max",
                     "Minimum Hours: $min"
                 )
