@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.OPSC_Group_Task2.opsc_group_task2.Activity.HomePageActivity
 import com.OPSC_Group_Task2.opsc_group_task2.Models.ProjectData
 import com.OPSC_Group_Task2.opsc_group_task2.R
 
@@ -27,6 +28,7 @@ class ProjectAdapter(val c: Context, val projectList:ArrayList<ProjectData>) : R
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         val newList = projectList[position]
         holder.projectName.text = newList.projectName
+        HomePageActivity.project.projectname = holder.projectName.text.toString()
         holder.maxHours.text = newList.MaxHours.toString()
         holder.minHours.text = newList.MinHours.toString()
         holder.itemView.setOnClickListener {
@@ -41,4 +43,5 @@ class ProjectAdapter(val c: Context, val projectList:ArrayList<ProjectData>) : R
     override fun getItemCount(): Int {
         return projectList.size
     }
+
 }

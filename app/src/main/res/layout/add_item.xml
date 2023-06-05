@@ -68,7 +68,7 @@
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                 android:padding="8dp"
-                android:hint="Maximum Hours"
+                android:hint="Maximum daily hours"
                 android:drawableLeft="@drawable/baseline_access_time_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -83,10 +83,11 @@
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
                 android:padding="8dp"
-                android:hint="Minimum Hours"
+                android:hint="Maximum daily hours"
                 android:drawableLeft="@drawable/baseline_access_time_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
+
 
 
 

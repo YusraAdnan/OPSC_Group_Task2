@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,10 @@ import com.OPSC_Group_Task2.opsc_group_task2.Models.TimesheetData
 import com.OPSC_Group_Task2.opsc_group_task2.R
 import com.OPSC_Group_Task2.opsc_group_task2.Views.TimesheetAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import org.w3c.dom.Text
+import java.lang.Integer.parseInt
+import java.text.SimpleDateFormat
+import java.time.Duration
 
 class TimesheetEntry : AppCompatActivity() {
     private lateinit var addsBtn: FloatingActionButton
@@ -24,23 +29,25 @@ class TimesheetEntry : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timesheet_entry)
-        setContentView(R.layout.activity_timesheet_entry)
-        val bundle: Bundle? = intent.extras
 
+
+        val bundle: Bundle? = intent.extras
         val msg = bundle!!.getString("key")
 
         if (msg != null) {
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            //setting category name to timesheet entry
+            val tv1: TextView = findViewById(R.id.tvCategoryName)
+            tv1.text = msg
         }
 
         HomePageActivity.timeSheets.timesheetlist2.forEach{
             if(it.EntryName == msg)
             {
                 TimesheetEntry.projecttimesheet.timesheetlist2.add(it)
-
             }
-
         }
+       getTotalHours()
+
 
         timesheetList = TimesheetEntry.projecttimesheet.timesheetlist2
         addsBtn =findViewById(R.id.addingTimesheetButton)
@@ -54,7 +61,6 @@ class TimesheetEntry : AppCompatActivity() {
         backbutton.setOnClickListener{
             val vIntent = Intent(this, HomePageActivity:: class.java)
             finish()
-
         }
     }
     private fun addTimesheetInfo() {
@@ -62,8 +68,8 @@ class TimesheetEntry : AppCompatActivity() {
         val v = inflter.inflate(R.layout.add_timesheet_item, null)
 
         val EntryName = v.findViewById<EditText>(R.id.etEntryName)
-        val startDate = v.findViewById<EditText>(R.id.etStartDate)
-        val dueDate = v.findViewById<EditText>(R.id.etDueDate)
+        val startDateTime = v.findViewById<EditText>(R.id.etStartDateTime)
+        val duration = v.findViewById<EditText>(R.id.etDuration)
         val description = v.findViewById<EditText>(R.id.etDescription)
         val category = v.findViewById<EditText>(R.id.etCategory)
 
@@ -77,29 +83,33 @@ class TimesheetEntry : AppCompatActivity() {
             ).show()
 
             val EntryName = EntryName.text.toString()
-            val startDate = startDate.text.toString()
-            val dueDate = dueDate.text.toString()
+            val startDateTime = startDateTime.text.toString()
+            val Duration = duration.text.toString()
             val description = description.text.toString()
             val category = category.text.toString()
+
 
             timesheetList.add(
                 TimesheetData(
                     "EntryName:$EntryName",
-                    "startDate: $startDate",
-                    "dueDate: $dueDate",
+                    "startDateTime: $startDateTime",
+                    "Duration: $Duration",
                     "description: $description",
-                    "category: $category"
+                    "category: $category",
+
                 )
             )
             HomePageActivity.timeSheets.timesheetlist2.add(
                 TimesheetData(
                     "EntryName:$EntryName",
-                    "startDate: $startDate",
-                    "dueDate: $dueDate",
+                    "startDateTime: $startDateTime",
+                    "Duration: $Duration",
                     "description: $description",
-                    "category: $category"
+                    "category: $category",
+
                 )
             )
+            getTotalHours()
             timesheetAdapter.notifyDataSetChanged()
             Toast.makeText(this, "Timesheet entry added successfully", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
@@ -115,5 +125,23 @@ class TimesheetEntry : AppCompatActivity() {
     }
     object projecttimesheet{
         val timesheetlist2 = ArrayList<TimesheetData>()
+    }
+
+    fun getTotalHours()
+    {
+        var TotalHours: Int  =  0
+         for(it in projecttimesheet.timesheetlist2) {
+             // if(it.Duration.toIntOrNull() != null)
+             //  {
+             var temp: Int = (it.Duration.filter { it.isDigit() }.toInt())
+             TotalHours += temp
+
+             //  }
+         }
+
+
+
+        val tv1: TextView = findViewById(R.id.tvTotalHours)
+        tv1.text = TotalHours.toString()
     }
 }
