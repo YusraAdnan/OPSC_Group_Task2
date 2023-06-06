@@ -30,7 +30,7 @@
                 android:backgroundTint="@color/orange"
                 android:drawableLeft="@drawable/baseline_calendar_month_24"
                 android:drawablePadding="8dp"
-                android:hint="Entry name:"
+
                 android:inputType="text"
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
@@ -79,19 +79,30 @@
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/etCategory"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+
+            <Button
+                android:id="@+id/cameraBtn"
+                android:layout_width="125dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:backgroundTint="@color/orange"
-                android:drawableLeft="@drawable/baseline_edit_note_24"
-                android:drawablePadding="8dp"
-                android:hint="Category:"
-                android:padding="8dp"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                android:textColor="@color/black" />
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/darkblue"
+                android:text="Camera"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"/>
+
+            <Button
+                android:id="@+id/galleryBtn"
+                android:layout_width="125dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:backgroundTint="@color/darkblue"
+                android:text="Gallery"
+                android:textSize="18sp"
+                app:cornerRadius="20dp"/>
+
+
 
         </LinearLayout>
 

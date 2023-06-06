@@ -19,7 +19,7 @@ class TimesheetAdapter(val c: Context, private val timesheetList:ArrayList<Times
         val StartDateTime = v.findViewById<TextView>(R.id.etStartDateTime)
         val Duration = v.findViewById<TextView>(R.id.etDuration)
         val description = v.findViewById<TextView>(R.id.etDescription)
-        val category = v.findViewById<TextView>(R.id.etCategory)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimesheetViewHolder {
@@ -35,8 +35,6 @@ class TimesheetAdapter(val c: Context, private val timesheetList:ArrayList<Times
         holder.StartDateTime.text = newList.StartDateTime
         holder.Duration.text = newList.Duration.toString()
         holder.description.text = newList.Description
-        holder.category.text = newList.Category
-
 
 
     }

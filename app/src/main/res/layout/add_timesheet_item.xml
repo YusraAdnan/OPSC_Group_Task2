@@ -103,19 +103,7 @@
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/etCategory"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/custom_edittext"
-                android:backgroundTint="@color/orange"
-                android:drawableLeft="@drawable/baseline_edit_note_24"
-                android:drawablePadding="8dp"
-                android:hint="Category:"
-                android:padding="8dp"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                android:textColor="@color/black" />
+
 
 
 
