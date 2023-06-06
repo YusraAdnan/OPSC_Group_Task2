@@ -39,7 +39,8 @@ class TimesheetEntry : AppCompatActivity() {
             val tv1: TextView = findViewById(R.id.tvCategoryName)
             tv1.text = msg
         }
-
+       // Toast.makeText(this, HomePageActivity.project.projectname, Toast.LENGTH_SHORT).show()
+        TimesheetEntry.projecttimesheet.timesheetlist2.clear()
         HomePageActivity.timeSheets.timesheetlist2.forEach{
             if(it.EntryName == msg)
             {
@@ -68,10 +69,13 @@ class TimesheetEntry : AppCompatActivity() {
         val v = inflter.inflate(R.layout.add_timesheet_item, null)
 
         val EntryName = v.findViewById<EditText>(R.id.etEntryName)
+
+        EntryName.setText(HomePageActivity.project.projectname)
+        EntryName.isEnabled = false
         val startDateTime = v.findViewById<EditText>(R.id.etStartDateTime)
         val duration = v.findViewById<EditText>(R.id.etDuration)
         val description = v.findViewById<EditText>(R.id.etDescription)
-        val category = v.findViewById<EditText>(R.id.etCategory)
+
 
         val addDialog = AlertDialog.Builder(this)
         addDialog.setView(v)
@@ -86,26 +90,25 @@ class TimesheetEntry : AppCompatActivity() {
             val startDateTime = startDateTime.text.toString()
             val Duration = duration.text.toString()
             val description = description.text.toString()
-            val category = category.text.toString()
+
 
 
             timesheetList.add(
                 TimesheetData(
-                    "EntryName:$EntryName",
+                    "$EntryName",
                     "startDateTime: $startDateTime",
                     "Duration: $Duration",
                     "description: $description",
-                    "category: $category",
+
 
                 )
             )
             HomePageActivity.timeSheets.timesheetlist2.add(
                 TimesheetData(
-                    "EntryName:$EntryName",
+                    "$EntryName",
                     "startDateTime: $startDateTime",
                     "Duration: $Duration",
                     "description: $description",
-                    "category: $category",
 
                 )
             )

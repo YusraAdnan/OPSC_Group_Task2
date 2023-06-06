@@ -9,14 +9,14 @@ data class TimesheetData(
     val StartDateTime: String,
     val Duration: String,
     val Description: String,
-    val Category: String,
+
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.readString()!!
+
     ) {
     }
 
@@ -25,7 +25,7 @@ data class TimesheetData(
         parcel.writeString(StartDateTime)
         parcel.writeString(Duration)
         parcel.writeString(Description)
-        parcel.writeString(Category)
+
     }
 
     override fun describeContents(): Int {
