@@ -69,7 +69,7 @@
                 android:drawableLeft="@drawable/baseline_calendar_month_24"
                 android:drawablePadding="8dp"
                 android:hint="Start Date/Time:"
-                android:inputType="text"
+                android:inputType="datetime"
                 android:padding="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/black" />
@@ -80,7 +80,7 @@
                 android:id="@+id/etDuration"
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="8dp"
-                android:inputType="text"
+                android:inputType="number"
                 android:backgroundTint="@color/orange"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:padding="8dp"
