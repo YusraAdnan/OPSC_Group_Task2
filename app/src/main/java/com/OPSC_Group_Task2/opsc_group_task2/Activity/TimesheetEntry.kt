@@ -1,6 +1,7 @@
 package com.OPSC_Group_Task2.opsc_group_task2.Activity
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,13 +21,17 @@ import org.w3c.dom.Text
 import java.lang.Integer.parseInt
 import java.text.SimpleDateFormat
 import java.time.Duration
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class TimesheetEntry : AppCompatActivity() {
     private lateinit var addsBtn: FloatingActionButton
+private lateinit var progressbtn: Button
     private lateinit var recv: RecyclerView
     private lateinit var timesheetList:ArrayList<TimesheetData>
     private lateinit var timesheetAdapter: TimesheetAdapter
     private lateinit var backbutton: Button
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timesheet_entry)
@@ -52,6 +58,7 @@ class TimesheetEntry : AppCompatActivity() {
 
         timesheetList = TimesheetEntry.projecttimesheet.timesheetlist2
         addsBtn =findViewById(R.id.addingTimesheetButton)
+        progressbtn = findViewById(R.id.btnprogress)
         recv = findViewById(R.id.tRecycler)
         backbutton=findViewById(R.id.backBtn)
         timesheetAdapter = TimesheetAdapter(this, timesheetList)
@@ -59,11 +66,17 @@ class TimesheetEntry : AppCompatActivity() {
         recv.adapter = timesheetAdapter
         addsBtn.setOnClickListener{addTimesheetInfo()}
 
+      progressbtn.setOnClickListener{
+        val vIntent = Intent(this, ProgressPageActivity:: class.java)
+        startActivity(vIntent)
+       }
         backbutton.setOnClickListener{
             val vIntent = Intent(this, HomePageActivity:: class.java)
             finish()
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun addTimesheetInfo() {
         val inflter = LayoutInflater.from(this)
         val v = inflter.inflate(R.layout.add_timesheet_item, null)
@@ -91,14 +104,21 @@ class TimesheetEntry : AppCompatActivity() {
             val Duration = duration.text.toString()
             val description = description.text.toString()
 
-
+            try {
+                val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
+            }
+            catch(e: Exception)
+            {
+                Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
+                return@setPositiveButton
+            }
 
             timesheetList.add(
                 TimesheetData(
                     "$EntryName",
-                    "startDateTime: $startDateTime",
-                    "Duration: $Duration",
-                    "description: $description",
+                    "$startDateTime",
+                    "$Duration",
+                    "$description",
 
 
                 )
@@ -106,9 +126,9 @@ class TimesheetEntry : AppCompatActivity() {
             HomePageActivity.timeSheets.timesheetlist2.add(
                 TimesheetData(
                     "$EntryName",
-                    "startDateTime: $startDateTime",
-                    "Duration: $Duration",
-                    "description: $description",
+                    "$startDateTime",
+                    "$Duration",
+                    "$description",
 
                 )
             )
@@ -141,9 +161,6 @@ class TimesheetEntry : AppCompatActivity() {
 
              //  }
          }
-
-
-
         val tv1: TextView = findViewById(R.id.tvTotalHours)
         tv1.text = TotalHours.toString()
     }
