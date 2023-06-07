@@ -25,17 +25,25 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class TimesheetEntry : AppCompatActivity() {
+
     private lateinit var addsBtn: FloatingActionButton
-private lateinit var progressbtn: Button
+    private lateinit var progressbtn: Button
     private lateinit var recv: RecyclerView
     private lateinit var timesheetList:ArrayList<TimesheetData>
     private lateinit var timesheetAdapter: TimesheetAdapter
     private lateinit var backbutton: Button
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timesheet_entry)
 
+        /*Code Attribution
+        *These youtube video's were referred to when adding categories to category page
+        **Link:https://www.youtube.com/watch?v=RfIR4oaSVfQ
+        **Link:https://www.youtube.com/watch?v=xDfkl1Aq6d8
+        **Link:https://www.youtube.com/watch?v=RzjCMa4GBD4&t=32s
+        **/
 
         val bundle: Bundle? = intent.extras
         val msg = bundle!!.getString("key")
@@ -45,7 +53,7 @@ private lateinit var progressbtn: Button
             val tv1: TextView = findViewById(R.id.tvCategoryName)
             tv1.text = msg
         }
-       // Toast.makeText(this, HomePageActivity.project.projectname, Toast.LENGTH_SHORT).show()
+
         TimesheetEntry.projecttimesheet.timesheetlist2.clear()
         HomePageActivity.timeSheets.timesheetlist2.forEach{
             if(it.EntryName == msg)
@@ -54,7 +62,6 @@ private lateinit var progressbtn: Button
             }
         }
        getTotalHours()
-
 
         timesheetList = TimesheetEntry.projecttimesheet.timesheetlist2
         addsBtn =findViewById(R.id.addingTimesheetButton)
@@ -66,10 +73,10 @@ private lateinit var progressbtn: Button
         recv.adapter = timesheetAdapter
         addsBtn.setOnClickListener{addTimesheetInfo()}
 
-      progressbtn.setOnClickListener{
-        val vIntent = Intent(this, ProgressPageActivity:: class.java)
-        startActivity(vIntent)
-       }
+        progressbtn.setOnClickListener{
+            val vIntent = Intent(this, ProgressPageActivity:: class.java)
+            startActivity(vIntent)
+        }
         backbutton.setOnClickListener{
             val vIntent = Intent(this, HomePageActivity:: class.java)
             finish()
@@ -83,16 +90,15 @@ private lateinit var progressbtn: Button
 
         val EntryName = v.findViewById<EditText>(R.id.etEntryName)
 
-        EntryName.setText(HomePageActivity.project.projectname)
-        EntryName.isEnabled = false
+        EntryName.setText(HomePageActivity.project.projectname) //sets the entry name in the add timesheet card view with the category name of the item clicked category name
+        EntryName.isEnabled = false //does not allow user to change text
+
         val startDateTime = v.findViewById<EditText>(R.id.etStartDateTime)
         val duration = v.findViewById<EditText>(R.id.etDuration)
         val description = v.findViewById<EditText>(R.id.etDescription)
 
-
         val addDialog = AlertDialog.Builder(this)
         addDialog.setView(v)
-
         addDialog.setPositiveButton(android.R.string.ok) { dialog, which ->
             Toast.makeText(
                 applicationContext,
@@ -104,14 +110,14 @@ private lateinit var progressbtn: Button
             val Duration = duration.text.toString()
             val description = description.text.toString()
 
-          //  try {
-            //    val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
-            //}
-            //catch(e: Exception)
-            //{
-              //  Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
-                //return@setPositiveButton
-           // }
+            try {
+               val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
+            }
+            catch(e: Exception)
+            {
+                Toast.makeText(this, "Invalid  study date format. Enter date and time as: dd-MM-yyyy HH:mm", Toast.LENGTH_SHORT).show()
+                return@setPositiveButton
+            }
 
             timesheetList.add(
                 TimesheetData(
@@ -119,8 +125,6 @@ private lateinit var progressbtn: Button
                     "$startDateTime",
                     "$Duration",
                     "$description",
-
-
                 )
             )
             HomePageActivity.timeSheets.timesheetlist2.add(
@@ -129,7 +133,6 @@ private lateinit var progressbtn: Button
                     "$startDateTime",
                     "$Duration",
                     "$description",
-
                 )
             )
             getTotalHours()
@@ -154,14 +157,12 @@ private lateinit var progressbtn: Button
     {
         var TotalHours: Int  =  0
          for(it in projecttimesheet.timesheetlist2) {
-             // if(it.Duration.toIntOrNull() != null)
-             //  {
-             var temp: Int = (it.Duration.filter { it.isDigit() }.toInt())
-             TotalHours += temp
 
-             //  }
+             var temp: Int = (it.Duration.filter { it.isDigit() }.toInt())
+             TotalHours += temp //add and equate the user input for hours worked
+
          }
         val tv1: TextView = findViewById(R.id.tvTotalHours)
-        tv1.text = TotalHours.toString()
+        tv1.text = TotalHours.toString() //displays the total hours at the top of the timesheet entry page for the specific category
     }
 }

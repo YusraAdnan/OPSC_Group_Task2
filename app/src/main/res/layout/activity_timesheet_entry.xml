@@ -94,16 +94,7 @@
         android:text="View progress"
         android:textSize="14sp"
         app:cornerRadius="20dp" />
-    <Button
-        android:id="@+id/cameraButton"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="-150dp"
-        android:layout_marginTop="-90dp"
-        android:backgroundTint="@color/darkblue"
-        android:text="Add pic"
-        android:textSize="14sp"
-        app:cornerRadius="20dp" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addingTimesheetButton"
