@@ -104,14 +104,14 @@ private lateinit var progressbtn: Button
             val Duration = duration.text.toString()
             val description = description.text.toString()
 
-            try {
-                val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
-            }
-            catch(e: Exception)
-            {
-                Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
-                return@setPositiveButton
-            }
+          //  try {
+            //    val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
+            //}
+            //catch(e: Exception)
+            //{
+              //  Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
+                //return@setPositiveButton
+           // }
 
             timesheetList.add(
                 TimesheetData(
