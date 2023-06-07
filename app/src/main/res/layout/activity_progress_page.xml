@@ -111,22 +111,22 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Hours: "
+                android:text="Total Hours: "
                 android:textAlignment="center"
                 android:textColor="@color/darkblue"
-                android:textSize="28sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/hoursholdertv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="-45dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-37dp"
+                android:layout_marginLeft="-29dp"
                 android:layout_gravity="center"
                 android:text="0"
                 android:textColor="@color/darkblue"
-                android:textSize="28sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
             <Button
                 android:id="@+id/btnCalculate"
