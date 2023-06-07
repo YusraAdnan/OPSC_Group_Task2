@@ -27,6 +27,7 @@ import java.time.format.DateTimeFormatter
 class TimesheetEntry : AppCompatActivity() {
     private lateinit var addsBtn: FloatingActionButton
 private lateinit var progressbtn: Button
+private lateinit var cameraButoon: Button
     private lateinit var recv: RecyclerView
     private lateinit var timesheetList:ArrayList<TimesheetData>
     private lateinit var timesheetAdapter: TimesheetAdapter
@@ -66,6 +67,7 @@ private lateinit var progressbtn: Button
         recv.adapter = timesheetAdapter
         addsBtn.setOnClickListener{addTimesheetInfo()}
 
+
       progressbtn.setOnClickListener{
         val vIntent = Intent(this, ProgressPageActivity:: class.java)
         startActivity(vIntent)
@@ -104,14 +106,14 @@ private lateinit var progressbtn: Button
             val Duration = duration.text.toString()
             val description = description.text.toString()
 
-            try {
-                val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
-            }
-            catch(e: Exception)
-            {
-                Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
-                return@setPositiveButton
-            }
+            //try {
+                //val EndDate1 =  LocalDateTime.parse(startDateTime, DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm"))
+            //}
+            //catch(e: Exception)
+           // {
+            //    Toast.makeText(this, "Invalid  date format", Toast.LENGTH_SHORT).show()
+            //    return@setPositiveButton
+            //}
 
             timesheetList.add(
                 TimesheetData(
