@@ -26,10 +26,18 @@ class HomePageActivity : AppCompatActivity() {
     private lateinit var projectList:ArrayList<ProjectData>
     private lateinit var userAdapter: ProjectAdapter
     private lateinit var button:Button
+
+    /*Code Attribution
+        *These youtube video's were referred to when adding categories to category page
+        **Link:https://www.youtube.com/watch?v=RfIR4oaSVfQ
+        **Link:https://www.youtube.com/watch?v=xDfkl1Aq6d8
+        **Link:https://www.youtube.com/watch?v=RzjCMa4GBD4&t=32s
+        **/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
 
+        //initialize list of projects
         projectList = ArrayList()
 
         addsBtn=findViewById(R.id.addingButton)
@@ -40,11 +48,11 @@ class HomePageActivity : AppCompatActivity() {
         addsBtn.setOnClickListener{addInfo()}
 
 
-        //new code for intent
+        //when user clicks on the each item added to the recycler view they shall be directed to the add timesheet entry activity
         userAdapter.onItemClick ={
 
             val intent = Intent(this, TimesheetEntry::class.java)
-            intent.putExtra("key",HomePageActivity.project.projectname)
+            intent.putExtra("key",HomePageActivity.project.projectname) //passes the category/project name to the timesheet entry from global variable that holds the project name
             startActivity(intent)
         }
     }
@@ -65,10 +73,12 @@ class HomePageActivity : AppCompatActivity() {
                 applicationContext,
                 android.R.string.ok, Toast.LENGTH_SHORT
             ).show()
-
+            //when the user presses "Ok" the text views will be equated to the user input
             val names = projectName.text.toString()
             val max = maxHours.text.toString()
             val min = minHours.text.toString()
+
+            //add user input to the object of the list
             projectList.add(
                 ProjectData(
                     "Category:$names",
@@ -91,12 +101,14 @@ class HomePageActivity : AppCompatActivity() {
         addDialog.show()
     }
 
+    //global list holding the timesheet data
     object timeSheets{
         val timesheetlist2 = ArrayList<TimesheetData>()
     }
+    //global variable that holds the category name/ project name that user inputs
     object project{
         var projectname:String = "aaa"
 
     }
-
+      //___________________end____________________
 }

@@ -22,6 +22,10 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var btnSignUp: Button
     private lateinit var firebaseAuth: FirebaseAuth
 
+    /*Code Attribution
+          *This youtube video was referred to when creating the login and signup page
+          **Link:https://www.youtube.com/watch?v=QAKq8UBv4GI
+          **/
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_sign_up)
         super.onCreate(savedInstanceState)
@@ -40,7 +44,6 @@ class SignUpActivity : AppCompatActivity() {
             UserSignUp()
         }
         // switching from signUp Activity to Login Activity
-
         btnLogin.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -54,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
         val password = etPassword.text.toString()
         val confirmPassword = etConfirmPassword.text.toString()
 
-        // checks
+        //error handling if any of the edit texts are blank/null
         if (email.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
             Toast.makeText(this, "Fill in you email and password", Toast.LENGTH_SHORT).show()
             return
@@ -69,10 +72,7 @@ class SignUpActivity : AppCompatActivity() {
                 .show()
             return
         }
-        // If all credential are correct
-        // We call createUserWithEmailAndPassword
-        // using auth object and pass the
-        // email and pass in it.
+        // If all credential are correct we call createUserWithEmailAndPassword using auth object and pass the email and pass in it.
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
@@ -86,7 +86,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
 
             }
-
+         //_________end________
 
     }
 }
