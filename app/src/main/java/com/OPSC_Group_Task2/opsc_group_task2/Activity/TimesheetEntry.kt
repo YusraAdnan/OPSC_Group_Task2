@@ -39,7 +39,7 @@ class TimesheetEntry : AppCompatActivity() {
         setContentView(R.layout.activity_timesheet_entry)
 
         /*Code Attribution
-        *These youtube video's were referred to when adding categories to category page
+        *These youtube video's were referred to when adding timesheet to the timesheet page
         **Link:https://www.youtube.com/watch?v=RfIR4oaSVfQ
         **Link:https://www.youtube.com/watch?v=xDfkl1Aq6d8
         **Link:https://www.youtube.com/watch?v=RzjCMa4GBD4&t=32s
